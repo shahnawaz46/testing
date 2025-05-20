@@ -10,9 +10,13 @@ function App() {
   const checkAuthentication = async () => {
     try {
       // await axiosInstance.get("/authenticated");
-      await axios.patch("/profile", {
-        userDetail: { firstName: "Mohammad BHAI" },
-      });
+      await axios.patch(
+        "https://ecommerce-server-1cz2.onrender.com/api/user/profile",
+        {
+          userDetail: { firstName: "Mohammad BHAI" },
+        },
+        { withCredentials: true }
+      );
       // https://ecommerce-server-1cz2.onrender.com/api/user/profile
     } catch (err) {
       console.log("CATCH ERROR");
